@@ -1,0 +1,43 @@
+<section id="people">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Popular People</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+        <div class="card-group">
+            <div class="col-lg-6 col-sm-6 align-items-stretch" *ngFor="let person of people">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-4">
+                             <a (click)="goPerson(person.id)" title="{{ person.name }}" ng-if="person.profile_path">
+                                <img  class="card-img-top" src="{{getUrl(person.profile_path)}}">
+                             </a>
+                        </div>
+                        
+                        <div class="col-md-8 px-3">
+                            <div class="card-block">
+                                <h4>
+                                    <a (click)="goPerson(person.id)" *ngIf="person.name">
+                                        {{person.name}}
+                                    </a>
+                                </h4>
+                                <p class="card-text">Known for:</p>
+                                <div class="card-group d-flex flex-row">
+                                  <div class="col-lg-4 col-md-4 col-4" *ngFor="let movie of person.known_for">
+                                      <a (click)="goMovie(movie.id)" title="{{ movie.title }}" ng-if="movie.poster_path">
+                                        <img  class="card-img-top" src="{{getUrl(movie.poster_path)}}">
+                                     </a>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    
+

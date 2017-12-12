@@ -1,0 +1,36 @@
+<section class="bg-primary" id="movies">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading text-white">Popular Movies</h2>
+                <hr class="light my-4">
+                <p class="text-faded mb-4">The Best Of Best!</p>
+            </div>
+        </div>
+        
+        <div class="card-group">
+            <div class="col-lg-6 col-sm-6 d-flex align-items-stretch" *ngFor="let movie of movies">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-4">
+                             <a (click)="goMovie(movie.id)" title="{{ movie.title }}" ng-if="movie.poster_path">
+                                <img  class="card-img-top" src="{{getUrl(movie.poster_path)}}">
+                             </a>
+                        </div>
+                        
+                        <div class="col-md-8 px-3">
+                            <div class="card-block">
+                                <h4>
+                                    <a (click)="goMovie(movie.id)" *ngIf="movie.title">
+                                        {{movie.title}}
+                                    </a>
+                                </h4>
+                                <p class="card-text">{{movie.overview}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
