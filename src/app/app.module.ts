@@ -27,6 +27,7 @@ import { HttpModule } from '@angular/http';
 import { MovieComponent } from './movie/movie.component';
 import { HomeComponent } from './home/home.component';
 import { PersonComponent } from './person/person.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
 	{ path: '',  component: HomeComponent },
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     TechnologiesComponent,
     MovieComponent,
     HomeComponent,
-    PersonComponent
+    PersonComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
