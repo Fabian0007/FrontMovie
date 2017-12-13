@@ -26,10 +26,16 @@ export class PopularPeopleComponent implements OnInit {
   
   goPerson(id:number): void {
     this.router.navigate(['/person/'+id]);
+    this.ngAfterViewInit();
   }
   
   goMovie(id:number): void {
     this.router.navigate(['/movie/'+id]);
+    this.ngAfterViewInit();
+  }
+  
+  ngAfterViewInit() {
+	  window.scrollTo(0, 0);
   }
 }
 
