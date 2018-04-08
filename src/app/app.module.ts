@@ -28,6 +28,7 @@ import { MovieComponent } from './movie/movie.component';
 import { HomeComponent } from './home/home.component';
 import { PersonComponent } from './person/person.component';
 import { FooterComponent } from './footer/footer.component';
+import { PersonCastComponent } from './person-cast/person-cast.component';
 
 const appRoutes: Routes = [
 	{ path: '',  component: HomeComponent },
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     MovieComponent,
     HomeComponent,
     PersonComponent,
-    FooterComponent
+    FooterComponent,
+    PersonCastComponent
   ],
   imports: [
     BrowserModule,
